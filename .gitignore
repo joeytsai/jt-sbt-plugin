@@ -23,3 +23,6 @@ sbt-launch.jar
 # https://www.jetbrains.com/help/idea/2016.1/managing-projects-under-version-control.html
 **/.idea/workspace.xml
 **/.idea/tasks.xml
+# haven't had good lucking checking in .idea without it constantly changing, so just ignoring it
+# maybe because Scala plugin is confused by this plugin including itself?
+.idea/*
