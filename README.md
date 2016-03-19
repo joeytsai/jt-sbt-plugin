@@ -18,3 +18,6 @@ SBT is misnamed.  Nobody thinks it's simple.  It should be named the Scala Build
 2. update sbt to latest 0.13.11
 3. Per Jetbrains, including .idea
    https://www.jetbrains.com/help/idea/2016.1/managing-projects-under-version-control.html
+4. Self-Plugin
+   https://github.com/sbt/sbt-release/blob/master/project/plugins.sbt
+

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # From: https://github.com/twitter/finagle/blob/develop/sbt
-# https://raw.githubusercontent.com/twitter/finagle/develop/sbt
-# ensure this version and project/build.properties are consistent
+
+# ensure sbtver version and project/build.properties are consistent
 
 sbtver=0.13.11
 sbtjar=sbt-launch.jar
