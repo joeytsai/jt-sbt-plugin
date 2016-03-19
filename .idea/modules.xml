@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/jt-sbt-plugin.iml" filepath="$PROJECT_DIR$/.idea/jt-sbt-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin-build.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin-build.iml" />
     </modules>
   </component>
 </project>
