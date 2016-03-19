@@ -25,6 +25,9 @@ fi
 
 [ -f ~/.sbtconfig ] && . ~/.sbtconfig
 
+# Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=1024m; support was removed in 8.0
+#  -XX:MaxPermSize=1024m           \
+
 java -ea                          \
   $SBT_OPTS                       \
   $JAVA_OPTS                      \
@@ -35,7 +38,6 @@ java -ea                          \
   -XX:+CMSParallelRemarkEnabled   \
   -XX:+CMSClassUnloadingEnabled   \
   -XX:ReservedCodeCacheSize=128m  \
-  -XX:MaxPermSize=1024m           \
   -XX:SurvivorRatio=128           \
   -XX:MaxTenuringThreshold=0      \
   -Xss8M                          \

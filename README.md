@@ -1,12 +1,12 @@
 # jt-sbt-plugin
 
-As sbt is recursive (of course) this plugin has very productive for working with multiple Scala projects.
+As sbt is recursive (of course) this plugin is very productive for working with multiple Scala projects.
 
 ## My take on SBT and Scala
 
 SBT is misnamed.  Nobody thinks it's simple.  It should be named the Scala Build Tool; in my opinion, it's a good example of Scala and its philosophy.
 * of course, it's written in Scala
-* they made their own DSL (after all, Scala is the "Scalable Language")
+* they made their own DSL (since Scala is the "Scalable Language")
 * complicated
 * powerful
 
