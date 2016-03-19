@@ -9,7 +9,7 @@ object JtSbtPlugin extends AutoPlugin {
 
   private lazy val jtSettings = Seq(
     organization := "com.github.jt",
-    scalaVersion := "2.11.7",
+    scalaVersion := "2.11.8",
     // Scala 2.11 incremental compilation
     incOptions := incOptions.value.withNameHashing(true),
     // Don't publish javadoc or sources
@@ -24,6 +24,13 @@ object JtSbtPlugin extends AutoPlugin {
       "-target:jvm-1.8",
       "-Xlint",
       "-Xfatal-warnings"
+    ),
+
+    javacOptions := Seq(
+      "-deprecation",
+      "-target", "1.8",
+      "-Xlint",
+      "-Werror"
     )
   )
 
