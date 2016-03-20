@@ -4,3 +4,5 @@ unmanagedSourceDirectories in Compile += baseDirectory.value.getParentFile / "sr
 
 // https://github.com/sbt/sbt-git
 addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.5")
+// https://github.com/earldouglas/xsbt-web-plugin
+addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "2.1.0")

@@ -14,7 +14,7 @@ import sbt._
 object JtSbtPlugin extends AutoPlugin {
 
   override def requires = plugins.JvmPlugin && GitBranchPrompt && GitVersioning
-  override val projectConfigurations = Seq(IntegrationTest)
+  override def projectConfigurations = Seq(IntegrationTest)
   override def projectSettings = Defaults.coreDefaultSettings ++ Defaults.itSettings ++ commonSettings ++ pluginSettings
 
   private lazy val commonSettings = Seq(

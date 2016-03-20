@@ -33,3 +33,4 @@ lazy val clearLocal = Def.task {
 
 // Keep plugins in sync with project/plugins.sbt
 addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.5")
+addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "2.1.0")
