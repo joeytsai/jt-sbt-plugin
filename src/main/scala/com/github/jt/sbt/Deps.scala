@@ -7,7 +7,7 @@ import sbt._
  */
 object Deps {
   object Log {
-    val slf4j = "org.slf4j" % "slf4j-api" % "1.7.13"
+    val slf4j = "org.slf4j" % "slf4j-api" % "1.7.19"
     val grizzled = "org.clapper" %% "grizzled-slf4j" % "1.0.2" exclude("org.slf4j", "slf4j-api")
     val logback = "ch.qos.logback" % "logback-classic" % "1.1.6"
 
