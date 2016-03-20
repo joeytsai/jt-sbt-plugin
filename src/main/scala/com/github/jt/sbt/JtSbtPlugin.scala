@@ -51,7 +51,10 @@ object JtSbtPlugin extends AutoPlugin {
       "org.scala-lang" % "scala-library" % scalaVersion.value,
       "org.scala-lang" % "scala-reflect" % scalaVersion.value,
       "org.scala-lang" % "scalap" % scalaVersion.value
-    )
+    ),
+
+    // Add a single dependency, logback.  Shouldn't need another slf4j provider, right?
+    libraryDependencies += Deps.Log.logback
   )
 
   // consumers should define

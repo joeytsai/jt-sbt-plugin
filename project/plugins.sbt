@@ -2,6 +2,9 @@
 // This project is its own plugin :)
 unmanagedSourceDirectories in Compile += baseDirectory.value.getParentFile / "src" / "main" / "scala"
 
+// This plugin project uses logback
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.6"
+
 // https://github.com/sbt/sbt-git
 addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.5")
 // https://github.com/sbt/sbt-buildinfo

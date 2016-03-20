@@ -5,7 +5,6 @@ import java.net.URI
 import com.earldouglas.xwp.ContainerPlugin.autoImport.containerPort
 import com.earldouglas.xwp.TomcatPlugin
 import com.earldouglas.xwp.TomcatPlugin.autoImport.Tomcat
-import com.github.jt.sbt.Deps._
 import sbt.Keys._
 import sbt._
 
@@ -63,7 +62,7 @@ object JtRestPlugin extends AutoPlugin {
   }
 
   override val projectSettings = restPluginKeys ++ Seq(
-    libraryDependencies ++= Deps.scalatraDeps,
+    libraryDependencies ++= Deps.restDeps,
     commands += tomcatDebug
   )
 

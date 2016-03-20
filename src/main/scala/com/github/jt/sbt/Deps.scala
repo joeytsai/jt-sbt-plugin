@@ -8,7 +8,8 @@ import sbt._
 object Deps {
   object Log {
     val slf4j = "org.slf4j" % "slf4j-api" % "1.7.13"
-    val logging = "org.clapper" %% "grizzled-slf4j" % "1.0.2" exclude("org.slf4j", "slf4j-api")
+    val grizzled = "org.clapper" %% "grizzled-slf4j" % "1.0.2" exclude("org.slf4j", "slf4j-api")
+    val logback = "ch.qos.logback" % "logback-classic" % "1.1.6"
 
   }
   object Core {
@@ -34,17 +35,18 @@ object Deps {
     val servletApi = "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided"
   }
 
-  val scalatraDeps = Seq(
+  val restDeps = Seq(
+    Log.slf4j,
+    Log.grizzled,
+    Log.logback,
+    Core.jodaConvert,
+    Core.jodaTime,
+    Json.json4s,
+    Json.json4sExt,
     Scalatra.scalatra,
     Scalatra.json,
     Scalatra.swagger,
     Scalatra.scalatest,
-    Scalatra.servletApi,
-    Json.json4s,
-    Json.json4sExt,
-    Core.jodaConvert,
-    Core.jodaTime,
-    Log.slf4j,
-    Log.logging
+    Scalatra.servletApi
   )
 }
