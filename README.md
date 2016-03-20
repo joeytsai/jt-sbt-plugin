@@ -14,11 +14,14 @@ SBT is misnamed.  Nobody thinks it's simple.  It should be named the Scala Build
 ## Features
 
 1. sbt script from finagle
-   https://github.com/twitter/finagle/blob/develop/sbt
+  * https://github.com/twitter/finagle/blob/develop/sbt
 2. update sbt to latest 0.13.11
 3. Per Jetbrains, including .idea
    https://www.jetbrains.com/help/idea/2016.1/managing-projects-under-version-control.html
 4. Self-Plugin
-   https://github.com/sbt/sbt-release/blob/master/project/plugins.sbt
+  * https://github.com/sbt/sbt-release/blob/master/project/plugins.sbt
 5. Scala 2.11 and Java 8 compiler settings
+6. Support for sbt-git
+  * https://github.com/sbt/sbt-git
+  * Using git-describe, so users must git tag v0.0.1
 
