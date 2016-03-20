@@ -20,4 +20,5 @@ SBT is misnamed.  Nobody thinks it's simple.  It should be named the Scala Build
    https://www.jetbrains.com/help/idea/2016.1/managing-projects-under-version-control.html
 4. Self-Plugin
    https://github.com/sbt/sbt-release/blob/master/project/plugins.sbt
+5. Scala 2.11 and Java 8 compiler settings
 
