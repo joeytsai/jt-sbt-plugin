@@ -25,7 +25,7 @@ SBT is misnamed.  Nobody thinks it's simple.  It should be named the Scala Build
   * https://github.com/sbt/sbt-git
   * Using git-describe, so users must git tag v0.0.1
 7. JtRestPlugin for REST
-  * Scalatra 2.3, Json 3.2
+  * Scalatra 2.4, Json 3.3
   * Superset of JtSbtPlugin
 8. JtRestPlugin: use TomcatPlugin
   * https://github.com/earldouglas/xsbt-web-plugin
@@ -34,3 +34,7 @@ SBT is misnamed.  Nobody thinks it's simple.  It should be named the Scala Build
 10. JtRestPlugin: add tomcatDebug command
 11. Add sbt-buildinfo plugin
   * https://github.com/sbt/sbt-buildinfo
+12. Deps include slf4j, grizzled, and logback
+  * logback provider http://logback.qos.ch/manual/index.html
+  * grizzled interface http://software.clapper.org/grizzled-slf4j/
+  * slf4j api http://slf4j.org/manual.html

@@ -28,7 +28,7 @@ object JtRestPlugin extends AutoPlugin {
   lazy val browseTask = browse := {
     val log = streams.value.log
 
-    // read port for jetty, default to 8080
+    // read port for tomcat, default to 8080
     val port = {
       val p = (containerPort in Tomcat).value
       if (p == -1) 8080 else p
