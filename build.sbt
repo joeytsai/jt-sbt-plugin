@@ -20,7 +20,8 @@ lazy val plugin = (project in file("."))
     publishLocal := {
       val cl = clearLocal.value
       publishLocal.value
-    }
+    },
+    buildInfoObject := "BuildInfoJtSbtPlugin"
   )
 
 lazy val clearLocal = Def.task {
@@ -33,4 +34,5 @@ lazy val clearLocal = Def.task {
 
 // Keep plugins in sync with project/plugins.sbt
 addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.5")
+addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.6.1")
 addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "2.1.0")

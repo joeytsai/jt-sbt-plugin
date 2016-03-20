@@ -4,6 +4,9 @@ import com.typesafe.sbt.SbtGit.git
 import com.typesafe.sbt.{GitBranchPrompt, GitVersioning}
 import sbt.Keys._
 import sbt._
+import sbtbuildinfo.BuildInfoPlugin
+import sbtbuildinfo.BuildInfoPlugin.autoImport._
+
 
 /**
  * Common settings for Scala projects.
@@ -13,7 +16,7 @@ import sbt._
  */
 object JtSbtPlugin extends AutoPlugin {
 
-  override def requires = plugins.JvmPlugin && GitBranchPrompt && GitVersioning
+  override def requires = plugins.JvmPlugin && GitBranchPrompt && GitVersioning && BuildInfoPlugin
   override def projectConfigurations = Seq(IntegrationTest)
   override def projectSettings = Defaults.coreDefaultSettings ++ Defaults.itSettings ++ commonSettings ++ pluginSettings
 
@@ -44,10 +47,21 @@ object JtSbtPlugin extends AutoPlugin {
     )
   )
 
+  // consumers should define
+  // buildInfoObject
   private lazy val pluginSettings = Seq(
     // plugin: sbt-git
     // remember to git tag v0.0.1
-    git.useGitDescribe := true
+    git.useGitDescribe := true,
+
+    // plugin: sbt-buildinfo
+    buildInfoKeys := Seq(
+      name, version, scalaVersion, sbtVersion,
+      // get head sha from sbt-git
+      "gitHeadCommit" -> git.gitHeadCommit.value.getOrElse("")
+    ),
+    buildInfoOptions += BuildInfoOption.BuildTime,
+    buildInfoPackage := "com.github.jt.sbt"
   )
 
 }

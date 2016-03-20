@@ -31,4 +31,6 @@ SBT is misnamed.  Nobody thinks it's simple.  It should be named the Scala Build
   * https://github.com/earldouglas/xsbt-web-plugin
 9. JtRestPlugin: add browse task from scalatra-sbt
   * https://github.com/scalatra/scalatra-sbt/blob/master/src/main/scala/org/scalatra/sbt/ScalatraPlugin.scala
-
+10. JtRestPlugin: add tomcatDebug command
+11. Add sbt-buildinfo plugin
+  * https://github.com/sbt/sbt-buildinfo

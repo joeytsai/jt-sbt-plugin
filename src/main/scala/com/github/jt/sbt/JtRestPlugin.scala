@@ -10,7 +10,10 @@ import sbt.Keys._
 import sbt._
 
 /**
- * Created by joeyt on 3/19/16.
+ * Add Scalatra to library dependencies
+ * Load the TomcatPlugin
+ * Add a browse task
+ * Add tomcatDebug command
  */
 object JtRestPlugin extends AutoPlugin {
 
@@ -23,7 +26,7 @@ object JtRestPlugin extends AutoPlugin {
   import autoImport._
 
   // From: https://github.com/scalatra/scalatra-sbt/blob/master/src/main/scala/org/scalatra/sbt/ScalatraPlugin.scala
-  val browseTask = browse := {
+  lazy val browseTask = browse := {
     val log = streams.value.log
 
     // read port for jetty, default to 8080
