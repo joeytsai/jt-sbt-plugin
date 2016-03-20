@@ -44,7 +44,10 @@ object JtSbtPlugin extends AutoPlugin {
       "-target", "1.8",
       "-Xlint",
       "-Werror"
-    )
+    ),
+
+    dependencyOverrides += "org.scala-lang" % "scala-library" % scalaVersion.value
+
   )
 
   // consumers should define

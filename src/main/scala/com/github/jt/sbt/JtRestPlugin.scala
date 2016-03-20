@@ -63,15 +63,7 @@ object JtRestPlugin extends AutoPlugin {
   }
 
   override val projectSettings = restPluginKeys ++ Seq(
-    libraryDependencies ++= Seq(
-      Scalatra.scalatra,
-      Scalatra.json,
-      Scalatra.swagger,
-      Scalatra.scalatest,
-      Scalatra.servletApi,
-      Json.json4s,
-      Json.json4sExt
-    ),
+    libraryDependencies ++= Deps.scalatraDeps,
     commands += tomcatDebug
   )
 
