@@ -43,6 +43,22 @@ object JtRestPlugin extends AutoPlugin {
     }
   }
 
+  private lazy val debugOpts = Seq(
+    "-Xdebug",
+    "-Xrunjdwp:server=y,transport=dt_socket,address=5005,suspend=n"
+  )
+
+  def tomcatDebug = Command.command("tomcatDebug") { state =>
+    import com.earldouglas.xwp.ContainerPlugin.start
+    val state2 =
+      Project.extract(state).append(
+        Seq(javaOptions in Tomcat ++= debugOpts),
+        state
+      )
+    Project.extract(state2).runTask(start in Tomcat, state2)
+    state2
+  }
+
   override val projectSettings = restPluginKeys ++ Seq(
     libraryDependencies ++= Seq(
       Scalatra.scalatra,
@@ -52,7 +68,8 @@ object JtRestPlugin extends AutoPlugin {
       Scalatra.servletApi,
       Json.json4s,
       Json.json4sExt
-    )
+    ),
+    commands += tomcatDebug
   )
 
   lazy val restPluginKeys = Seq(browseTask)
