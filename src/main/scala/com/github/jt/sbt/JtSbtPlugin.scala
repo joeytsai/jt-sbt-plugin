@@ -1,7 +1,9 @@
 package com.github.jt.sbt
 
+import com.typesafe.sbt.SbtGit.git
+import com.typesafe.sbt.{GitBranchPrompt, GitVersioning}
+import sbt.Keys._
 import sbt._
-import Keys._
 
 /**
  * Common settings for Scala projects.
@@ -10,10 +12,10 @@ import Keys._
  */
 object JtSbtPlugin extends AutoPlugin {
 
-  //override def requires = plugins.JvmPlugin && GitBranchPrompt && GitVersioning
-  override def projectSettings = Defaults.coreDefaultSettings ++ jtSettings
+  override def requires = plugins.JvmPlugin && GitBranchPrompt && GitVersioning
+  override def projectSettings = Defaults.coreDefaultSettings ++ commonSettings ++ pluginSettings
 
-  private lazy val jtSettings = Seq(
+  private lazy val commonSettings = Seq(
     organization := "com.github.jt",
     scalaVersion := "2.11.8",
     // Scala 2.11 incremental compilation
@@ -38,6 +40,12 @@ object JtSbtPlugin extends AutoPlugin {
       "-Xlint",
       "-Werror"
     )
+  )
+
+  private lazy val pluginSettings = Seq(
+    // plugin: sbt-git
+    // remember to git tag v0.0.1
+    git.useGitDescribe := true
   )
 
 }
