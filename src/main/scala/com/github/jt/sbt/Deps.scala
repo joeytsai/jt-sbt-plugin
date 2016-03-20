@@ -6,6 +6,11 @@ import sbt._
  * Dependencies which work together.
  */
 object Deps {
+  object Log {
+    val slf4j = "org.slf4j" % "slf4j-api" % "1.7.13"
+    val logging = "org.clapper" %% "grizzled-slf4j" % "1.0.2" exclude("org.slf4j", "slf4j-api")
+
+  }
   object Core {
     val jodaTime = "joda-time" % "joda-time" % "2.9.1"
     val jodaConvert = "org.joda" % "joda-convert" % "1.8.1"
@@ -20,7 +25,7 @@ object Deps {
   object Scalatra {
     private val version = "2.4.0"
     private def module(name: String) = "org.scalatra" %% name % version
-    val scalatra  = module("scalatra")
+    val scalatra  = module("scalatra") exclude("org.slf4j", "slf4j-api")
     val json      = module("scalatra-json")
     val swagger   = module("scalatra-swagger") exclude(
       "joda-time", "joda-time") exclude("org.joda", "joda-convert")
@@ -38,6 +43,8 @@ object Deps {
     Json.json4s,
     Json.json4sExt,
     Core.jodaConvert,
-    Core.jodaTime
+    Core.jodaTime,
+    Log.slf4j,
+    Log.logging
   )
 }

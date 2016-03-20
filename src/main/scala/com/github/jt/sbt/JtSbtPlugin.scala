@@ -46,8 +46,12 @@ object JtSbtPlugin extends AutoPlugin {
       "-Werror"
     ),
 
-    dependencyOverrides += "org.scala-lang" % "scala-library" % scalaVersion.value
-
+    dependencyOverrides ++= Set(
+      "org.scala-lang" % "scala-compiler" % scalaVersion.value,
+      "org.scala-lang" % "scala-library" % scalaVersion.value,
+      "org.scala-lang" % "scala-reflect" % scalaVersion.value,
+      "org.scala-lang" % "scalap" % scalaVersion.value
+    )
   )
 
   // consumers should define
