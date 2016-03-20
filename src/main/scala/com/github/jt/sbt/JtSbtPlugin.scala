@@ -9,11 +9,13 @@ import sbt._
  * Common settings for Scala projects.
  *
  * Leaving trigger = noTrigger, so users must enablePlugin(JtSbtPlugin)
+ * This plugin includes the sbt-git plugins
  */
 object JtSbtPlugin extends AutoPlugin {
 
   override def requires = plugins.JvmPlugin && GitBranchPrompt && GitVersioning
-  override def projectSettings = Defaults.coreDefaultSettings ++ commonSettings ++ pluginSettings
+  override val projectConfigurations = Seq(IntegrationTest)
+  override def projectSettings = Defaults.coreDefaultSettings ++ Defaults.itSettings ++ commonSettings ++ pluginSettings
 
   private lazy val commonSettings = Seq(
     organization := "com.github.jt",
