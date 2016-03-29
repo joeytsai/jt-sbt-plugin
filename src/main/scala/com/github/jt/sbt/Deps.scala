@@ -9,11 +9,11 @@ object Deps {
   object Log {
     val slf4j = "org.slf4j" % "slf4j-api" % "1.7.19"
     val grizzled = "org.clapper" %% "grizzled-slf4j" % "1.0.2" exclude("org.slf4j", "slf4j-api")
-    val logback = "ch.qos.logback" % "logback-classic" % "1.1.6"
+    val logback = "ch.qos.logback" % "logback-classic" % "1.1.6" exclude("org.slf4j", "slf4j-api")
 
   }
   object Core {
-    val jodaTime = "joda-time" % "joda-time" % "2.9.1"
+    val jodaTime = "joda-time" % "joda-time" % "2.9.2"
     val jodaConvert = "org.joda" % "joda-convert" % "1.8.1"
   }
   object Json {
@@ -25,7 +25,7 @@ object Deps {
   object Scalatra {
     private val version = "2.4.0"
     private def module(name: String) = "org.scalatra" %% name % version
-    val scalatra  = module("scalatra") exclude("org.slf4j", "slf4j-api")
+    val scalatra  = module("scalatra") exclude("org.slf4j", "slf4j-api") exclude ("joda-time", "joda-time")
     val json      = module("scalatra-json")
     val swagger   = module("scalatra-swagger") exclude(
       "joda-time", "joda-time") exclude("org.joda", "joda-convert")
@@ -35,8 +35,8 @@ object Deps {
   }
   object Database {
     val mysql = "mysql" % "mysql-connector-java" % "5.1.38"
-    val pool = "com.zaxxer" % "HikariCP" % "2.4.5"
-    val jdbc = "org.scalikejdbc" %% "scalikejdbc" % "2.3.5"
+    val pool = "com.zaxxer" % "HikariCP" % "2.4.5" exclude("org.slf4j", "slf4j-api")
+    val jdbc = "org.scalikejdbc" %% "scalikejdbc" % "2.3.5" exclude("org.slf4j", "slf4j-api") exclude("org.apache.commons", "commons-dbcp2")
   }
 
   val config = "com.typesafe" % "config" % "1.3.0"
@@ -54,5 +54,16 @@ object Deps {
     Scalatra.swagger,
     Scalatra.scalatest,
     Scalatra.servletApi
+  )
+
+  val databaseDeps = Seq(
+    config,
+    Log.slf4j,
+    Log.grizzled,
+    Log.logback,
+    Core.jodaTime,
+    Database.mysql,
+    Database.pool,
+    Database.jdbc
   )
 }
