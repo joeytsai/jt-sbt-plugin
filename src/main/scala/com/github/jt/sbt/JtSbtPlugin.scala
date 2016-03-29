@@ -12,7 +12,7 @@ import sbtbuildinfo.BuildInfoPlugin.autoImport._
  * Common settings for Scala projects.
  *
  * Leaving trigger = noTrigger, so users must enablePlugin(JtSbtPlugin)
- * This plugin includes the sbt-git plugins
+ * This plugin includes the build-info and sbt-git plugins
  */
 object JtSbtPlugin extends AutoPlugin {
 

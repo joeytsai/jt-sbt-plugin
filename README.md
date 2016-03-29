@@ -24,6 +24,7 @@ SBT is misnamed.  Nobody thinks it's simple.  It should be named the Scala Build
 6. Support for sbt-git
   * https://github.com/sbt/sbt-git
   * Using git-describe, so users must git tag v0.0.1
+    * Works well with github releases
 7. JtRestPlugin for REST
   * Scalatra 2.4, Json 3.3
   * Superset of JtSbtPlugin

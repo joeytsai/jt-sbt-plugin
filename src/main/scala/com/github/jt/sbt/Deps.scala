@@ -22,7 +22,6 @@ object Deps {
     val json4sExt = "org.json4s" %% "json4s-ext" % version exclude(
       "joda-time", "joda-time") exclude("org.joda", "joda-convert")
   }
-
   object Scalatra {
     private val version = "2.4.0"
     private def module(name: String) = "org.scalatra" %% name % version
@@ -33,6 +32,11 @@ object Deps {
     val scalatest = module("scalatra-scalatest") % "it;test"
 
     val servletApi = "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided"
+  }
+  object Database {
+    val mysql = "mysql" % "mysql-connector-java" % "5.1.38"
+    val pool = "com.zaxxer" % "HikariCP" % "2.4.5"
+    val jdbc = "org.scalikejdbc" %% "scalikejdbc" % "2.3.5"
   }
 
   val restDeps = Seq(
