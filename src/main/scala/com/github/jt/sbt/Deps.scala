@@ -39,6 +39,8 @@ object Deps {
     val jdbc = "org.scalikejdbc" %% "scalikejdbc" % "2.3.5"
   }
 
+  val config = "com.typesafe" % "config" % "1.3.0"
+
   val restDeps = Seq(
     Log.slf4j,
     Log.grizzled,
